@@ -1,0 +1,14 @@
+{
+  "name": "kuroir-atom",
+  "theme": "syntax",
+  "version": "0.1.0",
+  "description": "A port of the Textmate theme from Kuroir.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/smlombardi/kuroir-atom"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  }
+}
