@@ -3,7 +3,7 @@ kuroir-atom
 
 Atom port of the Textmate theme.  Ported by hand to LESS, not simply converted with APM.  
 
-Optimizing syntax coloring for from-end development of HTML, CSS, SCSS, and JS.
+Optimizing syntax coloring for front-end development of HTML, CSS, SCSS, and JS.
 
 
 ###SCSS
