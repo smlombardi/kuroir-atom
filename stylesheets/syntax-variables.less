@@ -1,3 +1,4 @@
+@import "colors";
 // This defines all syntax variables that syntax themes must implement when they
 // include a syntax-variables.less file.
 
@@ -5,6 +6,7 @@
 @syntax-text-color: #363636;
 @syntax-cursor-color: #202020;
 @syntax-selection-color: rgba(234, 202, 148, 0.78);
+@syntax-background-color: #E8E9E8;
 @syntax-background-color: #E8E9E8;
 
 // Guide colors
@@ -24,16 +26,7 @@
 
 // For git diff info. i.e. in the gutter
 // These are static and were not extracted from your textmate theme
-@syntax-color-renamed: #96CBFE;
-@syntax-color-added: #8cd740;
-@syntax-color-modified: #c39341;
-@syntax-color-removed: #CC6666;
-
-
-// Kuroir colors
-@red-bright: #FD1732;
-
-@teal-dark: #005273;
-
-@green: #417E00;
-@green-light: #83a226;
+@syntax-color-renamed: @cyan;
+@syntax-color-added: @green;
+@syntax-color-modified: @orange;
+@syntax-color-removed: @red;

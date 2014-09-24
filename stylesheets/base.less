@@ -1,45 +1,66 @@
 @import "syntax-variables";
 
-.editor {
+
+.editor, .editor-colors {
   background-color: @syntax-background-color;
   color: @syntax-text-color;
-  .gutter {
-    background-color: @syntax-gutter-background-color;
-    color: @syntax-gutter-text-color;
-    .line-number.cursor-line {
-      background-color: @syntax-gutter-background-color-selected;
-      color: @syntax-gutter-text-color-selected;
-    }
-    .line-number.cursor-line-no-selection {
-      color: @syntax-gutter-text-color-selected;
-    }
-  }
+}
+
+.editor {
   .wrap-guide {
-    color: @syntax-wrap-guide-color;
+    background-color: @syntax-wrap-guide-color;
   }
+
   .indent-guide {
     color: @syntax-indent-guide-color;
   }
+
   .invisible-character {
     color: @syntax-invisible-character-color;
   }
-  .search-results .marker .region {
-    background-color: transparent;
-    border: @syntax-result-marker-color;
-  }
-  .search-results .marker.current-result .region {
-    border: @syntax-result-marker-color-selected;
-  }
+
   &.is-focused {
-    .cursor {
-      border-color: @syntax-cursor-color;
+    .cursor { border-color: @syntax-cursor-color; }
+    &.vim-mode.command-mode .cursor { background-color: @syntax-cursor-color; }
+
+    .cursor,
+    &.vim-mode.command-mode .cursor {
+      transition: opacity .3s ease-in-out;
+      &.blink-off {
+        visibility: visible;
+        opacity: 0;
+      }
     }
-    .selection .region {
-      background-color: @syntax-selection-color;
+  }
+
+  .gutter {
+    background-color: @syntax-gutter-background-color;
+    color: @syntax-gutter-text-color;
+
+    .line-number {
+      &.cursor-line {
+        background-color: @syntax-gutter-background-color-selected;
+        color: @syntax-gutter-text-color-selected;
+      }
+
+      &.cursor-line-no-selection {
+        color: @syntax-gutter-text-color-selected;
+      }
     }
-    .line-number.cursor-line-no-selection, .editor.is-focused .line.cursor-line {
-      background-color: rgba(203, 220, 47, 0.22);
-    }
+  }
+
+  .gutter .line-number.folded,
+  .gutter .line-number:after,
+  .fold-marker:after {
+    color: @syntax-gutter-text-color;
+  }
+
+  .invisible {
+    color: @syntax-text-color;
+  }
+
+  .selection .region {
+    background-color: @syntax-selection-color;
   }
 }
 
@@ -48,63 +69,64 @@
 .comment {
   color: rgba(148, 148, 148, 0.91);
   background-color: rgba(220, 220, 220, 0.56);
-  &.line.region {
-    color: #A54776;
-    background-color: rgba(233, 214, 220, 0.52);
-  }
-  &.line.marker.php {
-    color: #668D68;
-    background-color: #E9E4BE;
-  }
-  &.line.todo.php {
-    color: #456E48;
-    background-color: #D9EAB8;
-  }
-  &.line.fixme.php {
-    color: #880006;
-    background-color: #E1D0CA;
-  }
 }
+
 
 
 
 
 .constant {
-  color: #CD6839;
-  &.numeric {
-    color: #9A5925;
+  color: @orange;
+
+  &.character.escape {
+    color: @cyan;
   }
+
+  &.numeric {
+    color: @yellow;
+  }
+
   &.other.color, &.other.color.rgb-value-scss {
-    color: #B8860B;
+    color: @cyan;
     .punctuation.definition.constant.scss {
-      color: #B8860B;
+      color: @cyan;
     }
-}
-}
+  }
 
-
+  &.other.symbol {
+    color: @green;
+  }
+}
 
 
 
 
 .entity {
-  color: #8B4726;
-  &.other {
-    &.inherited-class {
-      color: @teal-dark;
+  color: @brown;
+  &.other.inherited-class {
+    color: @teal-dark;
+  }
+  &.other.attribute-name {
+    &.html {
+      color: @cyan;
     }
-    &.attribute-name.html {
-      color: #629F9E;
+    &.class.css {
+      color: @red;
     }
+  }
+  &.other.attribute-name.id {
+    color: @red;
   }
   &.name.tag.namespace, &.other.attribute-name.namespace {
-    color: #B85423;
-  }
-  &.name.tag.css {
-    color: #B83126;
+    color: @orange;
   }
   &.name.function.js {
     color: #488C45;
+  }
+  &.name {
+    &.tag.css {
+      color: @teal-dark;
+    }
   }
 }
 
@@ -134,22 +156,22 @@
   }
   &.operator{
     &.comparison {
-      color: #B83126;
+      color: @red;
     }
     &.logical {
-      color: #B83126;
+      color: @red;
     }
     &.js {
       color: #A99904;
     }
   }
   &.other {
-    color: #9F5E3D;
+    color: @brown;
     &.important {
-      color: #EE3A8C;
+      color: @red-bright;
     }
     &.default {
-      color: #EE3A8C;
+      color: @red-bright;
     }
   }
 
@@ -160,7 +182,7 @@
 .storage {
   color: #A52A2A;
   &.type.js {
-    color: #BB3182;
+    color: @burgundy;
   }
 }
 
@@ -184,20 +206,20 @@
 
 
 .support {
-  color: #104E8B;
+  color: @blue-dark;
   &.function {
     color: @teal-dark;
   }
   &.constant {
-    color: #CF6A4C;
+    color: @orange;
   }
   &.class.js {
-    color: #338FD5;
+    color: @blue;;
   }
 }
 
 .support.function:not(.variable), .keyword.other.special-method.ruby {
-  color: #B03060;
+  color: @burgundy;
 }
 
 .support.type.property-name.css, .meta.property-name {
@@ -242,18 +264,6 @@
 
 
 
-.meta.selector.css .entity.other.attribute-name.tag.pseudo-class {
-  color: #B12E25;
-}
-
-.meta.selector.css .entity.other.attribute-name.id, .entity.other.attribute-name.id.css {
-  color: #B8002D;
-}
-
-.meta.selector.css .entity.other.attribute-name.class, .entity.other.attribute-name.class.css {
-  color: #B8012D;
-}
-
 
 .meta.preprocessor.at-rule .keyword.control.at-rule {
   color: #8693A5;
@@ -261,6 +271,13 @@
 
 .meta.property-value {
   color: @green;
+}
+
+
+
+
+.source.scss .support.function.misc {
+  color: @blue-medium;
 }
 
 
@@ -276,9 +293,6 @@
 
 
 
-.source.scss .support.function.misc {
-  color: #1B76B0;
-}
 
 .meta.diff, .meta.diff.header {
   font-style: italic;
