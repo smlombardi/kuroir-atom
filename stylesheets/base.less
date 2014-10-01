@@ -69,6 +69,7 @@
 .comment {
   color: rgba(148, 148, 148, 0.91);
   background-color: rgba(220, 220, 220, 0.56);
+  font-style:italic;
 }
 
 
@@ -112,7 +113,7 @@
   &.other.attribute-name {
     &.id.css {
       color: @red;
-      .punctuationctuation.definition.entity.css {
+      .punctuation.definition.entity.css {
         color: inherit;
       }
     &.placeholder.scss {
@@ -133,6 +134,10 @@
     color: #488C45;
   }
   &.name {
+    &.tag {
+      font-weight: bold;
+      font-style: italic;
+    }
     &.tag.css {
       color: @teal-dark;
     }
@@ -202,10 +207,12 @@
       color: @teal-dark;
     }
     &.string,
-    &.variable,
     &.parameters,
     &.array {
       color: @syntax-text-color;
+    }
+    &.variable {
+      color: inherit;
     }
     &.heading,
     &.identity {
@@ -223,6 +230,9 @@
   &.section.embedded {
     color: darken(@cyan, 15%);
     font-weight: bold !important;
+    .source.php {
+      color: inherit;
+    }
   }
 
 }
@@ -281,7 +291,7 @@
 }
 
 .support.function:not(.variable), .keyword.other.special-method.ruby {
-  color: @burgundy;
+ color: @burgundy;
 }
 
 // .support.type.property-name.css, .meta.property-name {
