@@ -1,3 +1,4 @@
+
 @import "syntax-variables";
 
 .editor,
@@ -34,6 +35,7 @@
         opacity: 0;
       }
     }
+
   }
   .gutter {
     background-color: @syntax-gutter-background-color;
@@ -43,7 +45,6 @@
       &.cursor-line {
         background-color: @syntax-gutter-background-color-selected;
         color: @syntax-gutter-text-color-selected;
-
       }
       &.cursor-line-no-selection {
         color: @syntax-gutter-text-color-selected;
@@ -55,10 +56,9 @@
   .gutter .line-number:after,
   .fold-marker:after {
     color: @syntax-gutter-text-color;
-
   }
   .invisible {
-    color: @syntax-text-color;
+    color: @syntax-invisible-character-color;
 
   }
   .selection .region {
@@ -69,22 +69,20 @@
 .bracket-matcher {
   background-color: @base1;
   opacity: 0.5;
-
 }
+
+
 .comment {
   color: @base1;
-
 }
 .constant {
   color: @orange;
 
   &.character.escape {
     color: @cyan;
-
   }
   &.numeric {
     color: @cyan;
-
   }
   &.other.color,
   &.other.color.rgb-value-scss {
@@ -98,47 +96,67 @@
     color: @green;
   }
   &.language.boolean {
-    color: @burgundy;
+    color: @violet;
   }
 
 }
 .entity {
   color: @yellow;
-  &.other.inherited-class {
-    color: @teal-dark;
-  }
-  &.other.attribute-name {
-    color: @yellow;
-    &.html {
-      color: @cyan;
+  &.other {
+    &.attribute-name {
+      color: @yellow;
+      &.html {
+        color: @cyan;
+      }
+      &.placeholder.scss {
+        color: @violet;
+      }
+      &.pseudo-element.css,
+      &.pseudo-class.css,
+      .pseudo-selector.css {
+        color: @orange;
+      }
+      &.namespace {
+        color: @orange;
+      }
+
+    }
+    &.inherited-class {
+      color: @teal-dark;
+    }
+    &.less.mixin {
+      color: @violet;
     }
 
-  }
-  &.name.tag.namespace,
-  &.other.attribute-name.namespace {
-    color: @orange;
-  }
-  &.name.function.js {
-    color: #488c45;
   }
   &.name {
     &.tag {
       font-weight: bold;
+      &.css {
+        color: @teal-dark;
+      }
+      &.reference.scss {
+        font-weight: normal;
+        color: @yellow-bright;
+      }
+
     }
-    &.tag.css {
-      color: @teal-dark;
+    &.function.js {
+      color: #488c45;
+    }
+    &.tag.namespace {
+      color: #488c45;
     }
   }
 
 }
-.entity.other.attribute-name.placeholder.scss {
-  color: @violet;
-  .punctuation.definition.entity.css {
-    color: inherit;
-  }
+// .entity.other.attribute-name.placeholder.scss {
+//   color: @violet;
+// }
 
-}
-.variable {
+.variable,
+.variable.language,
+.variable.other {
   color: @blue;
 
 }
@@ -153,16 +171,17 @@
 }
 .invalid {
   &.deprecated {
-    color: @red-bright;
+    color: @red;
     background-color: #e8e9e8;
   }
   &.illegal {
-    color: @red-bright;
+    color: @red;
     background-color: rgba(255, 6, 0, 0.15);
   }
 
 }
 .keyword {
+  color: @yellow-bright;
   &.control {
     color: #cd3700;
     &.js {
@@ -185,16 +204,14 @@
   &.other {
     color: @brown;
     &.important {
-      color: @red-bright;
+      color: @red;
     }
     &.default {
-      color: @red-bright;
+      color: @red;
     }
   }
 
 }
-
-
 .punctuation {
   &.definition {
     &.comment {
@@ -202,9 +219,11 @@
     }
     &.tag {
       color: @teal-dark;
-      &.begin.html, &.end.html {
-        color:@base1;
+      &.begin.html,
+      &.end.html {
+        color: @base1;
       }
+
     }
     &.string,
     &.parameters,
@@ -235,6 +254,11 @@
       color: inherit;
     }
   }
+
+}
+.punctuation.definition.keyword.css,
+.punctuation.definition.entity.css {
+  color: inherit;
 
 }
 .storage {
