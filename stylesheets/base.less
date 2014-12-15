@@ -163,12 +163,14 @@
 .delimiter,
 .brace {
   color: @red;
-
 }
 .delimiter.period {
   color: @green;
-
 }
+.punctuation.section.property-list.begin, .punctuation.section.property-list.end {
+  color: @red;
+}
+
 .invalid {
   &.deprecated {
     color: @red;
@@ -257,7 +259,9 @@
 
 }
 .punctuation.definition.keyword.css,
-.punctuation.definition.entity.css {
+.punctuation.definition.keyword.scss,
+.punctuation.definition.entity.css,
+.punctuation.definition.entity.scss {
   color: inherit;
 
 }
@@ -271,12 +275,11 @@
 .string {
   color: @green-light;
   &.quoted {
-    &.double {
+    &.double, &.single {
       color: @green-light;
       .constant.character.escape {
         color: inherit;
       }
-
     }
     &.double.js,
     &.single.js {
