@@ -7,6 +7,7 @@
   color: @syntax-text-color;
 
 }
+
 .editor {
   .wrap-guide {
     background-color: @syntax-wrap-guide-color;
@@ -114,7 +115,7 @@
       &.pseudo-element.css,
       &.pseudo-class.css,
       .pseudo-selector.css {
-        color: @orange;
+        color: @green;
       }
       &.namespace {
         color: @orange;
@@ -326,6 +327,11 @@
 
 .variable {
   color: @cyan-2;
+  &.interpolation {
+    &.scss {
+      color:@yellow-bright;
+    }
+  }
 
 }
 .text .source {
@@ -401,6 +407,18 @@
   background-color: rgba(203, 220, 47, 0.22);
 
 }
+
+
+.status-modified {
+  color: @syntax-color-modified;
+}
+
+
+
+
+
+
+
 // -- MARKUP
 
 .markup {
