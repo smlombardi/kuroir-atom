@@ -1,13 +1,13 @@
 
 @import "syntax-variables";
 
-.editor::shadow,
+.editor, :host,
 .editor-colors {
   background-color: @syntax-background-color;
   color: @syntax-text-color;
 }
 
-.editor::shadow {
+.editor, :host {
   .wrap-guide {
     background-color: @syntax-wrap-guide-color;
   }
