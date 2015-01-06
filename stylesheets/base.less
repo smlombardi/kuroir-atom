@@ -1,25 +1,21 @@
 
 @import "syntax-variables";
 
-.editor,
+.editor::shadow,
 .editor-colors {
   background-color: @syntax-background-color;
   color: @syntax-text-color;
-
 }
 
-.editor {
+.editor::shadow {
   .wrap-guide {
     background-color: @syntax-wrap-guide-color;
-
   }
   .indent-guide {
     color: @syntax-indent-guide-color;
-
   }
   .invisible-character {
     color: @syntax-invisible-character-color;
-
   }
   &.is-focused {
     .cursor {
