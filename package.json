@@ -1,7 +1,7 @@
 {
   "name": "kuroir-atom",
   "theme": "syntax",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "A port of the Textmate theme from Kuroir.",
   "repository": {
     "type": "git",
