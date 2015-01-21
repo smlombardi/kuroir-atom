@@ -35,6 +35,7 @@ atom-text-editor, :host {
   .gutter {
     background-color: @syntax-gutter-background-color;
     color: @syntax-gutter-text-color;
+    margin-right: 10px;
 
     .line-number {
       &.cursor-line {
@@ -67,8 +68,7 @@ atom-text-editor, :host {
 }
 
 
-.comment, .punctuation.definition.comment.html {
-  font-style: italic;
+.comment, .punctuation.definition.comment.html, .punctuation.definition.comment.js, .punctuation.definition.comment.css {
   color: @base1;
 }
 .constant {
