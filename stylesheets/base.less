@@ -5,7 +5,6 @@
 atom-text-editor, :host {
   background-color: @syntax-background-color;
   color: @syntax-text-color;
-
   .wrap-guide {
     background-color: @syntax-wrap-guide-color;
   }
@@ -30,13 +29,11 @@ atom-text-editor, :host {
         opacity: 0;
       }
     }
-
   }
   .gutter {
     background-color: @syntax-gutter-background-color;
     color: @syntax-gutter-text-color;
     margin-right: 10px;
-
     .line-number {
       &.cursor-line {
         background-color: @syntax-gutter-background-color-selected;
@@ -46,7 +43,6 @@ atom-text-editor, :host {
         color: @syntax-gutter-text-color-selected;
       }
     }
-
   }
   .gutter .line-number.folded,
   .gutter .line-number:after,
@@ -55,16 +51,14 @@ atom-text-editor, :host {
   }
   .invisible {
     color: @syntax-invisible-character-color;
-
   }
   .selection .region {
     background-color: @syntax-selection-color;
   }
-
 }
 .bracket-matcher .region {
   background-color: @base1;
-  opacity: 0.5;
+  opacity: 0.3;
 }
 
 
@@ -86,7 +80,6 @@ atom-text-editor, :host {
     .punctuation.definition.constant.scss {
       color: @orange;
     }
-
   }
   &.other.symbol {
     color: @green;
@@ -94,7 +87,6 @@ atom-text-editor, :host {
   &.language.boolean {
     color: @violet;
   }
-
 }
 .entity {
   color: @yellow;
@@ -115,7 +107,6 @@ atom-text-editor, :host {
       &.namespace {
         color: @orange;
       }
-
     }
     &.inherited-class {
       color: @teal-dark;
@@ -123,7 +114,6 @@ atom-text-editor, :host {
     &.less.mixin {
       color: @violet;
     }
-
   }
   &.name {
     &.tag {
@@ -135,7 +125,6 @@ atom-text-editor, :host {
         font-weight: normal;
         color: @yellow-bright;
       }
-
     }
     &.function.js {
       color: #488c45;
@@ -144,7 +133,6 @@ atom-text-editor, :host {
       color: #488c45;
     }
   }
-
 }
 // .entity.other.attribute-name.placeholder.scss {
 //   color: @violet;
@@ -176,7 +164,6 @@ atom-text-editor, :host {
     color: @red;
     background-color: rgba(255, 6, 0, 0.15);
   }
-
 }
 .keyword {
   color: @yellow-bright;
@@ -243,7 +230,6 @@ atom-text-editor, :host {
       color: @purple;
       font-style: italic;
     }
-
   }
   &.section.embedded {
     color: darken(@cyan, 15%);
