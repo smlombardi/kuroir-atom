@@ -8,6 +8,9 @@ atom-text-editor, :host {
   .wrap-guide {
     background-color: @syntax-wrap-guide-color;
   }
+  .lines .line.cursor-line {
+    background-color: @syntax-active-line-color;
+  }
   .indent-guide {
     color: @syntax-indent-guide-color;
   }
@@ -33,7 +36,6 @@ atom-text-editor, :host {
   .gutter {
     background-color: @syntax-gutter-background-color;
     color: @syntax-gutter-text-color;
-    margin-right: 10px;
     .line-number {
       &.cursor-line {
         background-color: @syntax-gutter-background-color-selected;
@@ -59,6 +61,11 @@ atom-text-editor, :host {
 .bracket-matcher .region {
   background-color: @base1;
   opacity: 0.3;
+}
+
+.meta.tag.any.html .string.quoted.double.html .invalid.illegal.bad-ampersand.html {
+  color: inherit;
+  background-color: inherit;
 }
 
 
