@@ -128,7 +128,7 @@ atom-text-editor, :host {
   }
   &.name {
     &.tag {
-      font-weight: bold;
+      font-family: 'SourceCodePro-Semibold', Menlo, Consolas monospace;
       &.css {
         color: @teal-dark;
       }
@@ -267,6 +267,8 @@ atom-text-editor, :host {
 .storage {
   color: #a52a2a;
   &.type.js {
+    font-family: 'SourceCodePro-Semibold', Menlo, Consolas monospace;
+    
     color: @burgundy;
   }
 
@@ -316,8 +318,8 @@ atom-text-editor, :host {
 }
 .support.function:not(.variable),
 .keyword.other.special-method.ruby {
+  font-family: 'SourceCodePro-Semibold', Menlo, Consolas monospace;
   color: @burgundy;
-
 }
 // .support.type.property-name.css, .meta.property-name {
 //   color: @teal-dark;
@@ -410,10 +412,6 @@ atom-text-editor, :host {
 .status-modified {
   color: @syntax-color-modified;
 }
-
-
-
-
 
 
 
