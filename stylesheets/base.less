@@ -1,8 +1,6 @@
-
 @import "syntax-variables";
-
-
-atom-text-editor, :host {
+atom-text-editor,
+:host {
   background-color: @syntax-background-color;
   color: @syntax-text-color;
   .wrap-guide {
@@ -58,40 +56,36 @@ atom-text-editor, :host {
     background-color: @syntax-selection-color;
   }
 }
-
-
 .bracket-matcher .region {
-    border-bottom: 1px solid @syntax-cursor-color;
-    box-sizing: border-box;
-    background-color: @syntax-bracket-matcher-background-color;
-  }
-
-
+  border-bottom: 1px solid @syntax-cursor-color;
+  box-sizing: border-box;
+  background-color: @syntax-bracket-matcher-background-color;
+}
 .meta.tag.any.html .string.quoted.double.html .invalid.illegal.bad-ampersand.html {
   color: inherit;
   background-color: inherit;
 }
-
-
-.comment, .punctuation.definition.comment.html, .punctuation.definition.comment.js, .punctuation.definition.comment.css {
+.comment,
+.punctuation.definition.comment.html,
+.punctuation.definition.comment.js,
+.punctuation.definition.comment.css {
   color: @syntax-comment-color;
   background-color: rgba(220, 220, 220, 0.5);
   //font-style: italic;
 }
 .constant {
   color: @orange;
-
   &.character.escape {
     color: @cyan;
   }
   &.numeric {
-    color: #9A5925;
+    color: #9a5925;
   }
   &.other.color,
   &.other.color.rgb-value-scss {
-    color: #B8860B;
+    color: #b8860b;
     .punctuation.definition.constant.scss {
-      color: #B8860B;
+      color: #b8860b;
     }
   }
   &.other.symbol {
@@ -121,7 +115,7 @@ atom-text-editor, :host {
         color: @orange;
       }
       &.class.css {
-        color: #B8012D;
+        color: #b8012d;
       }
     }
     &.inherited-class {
@@ -153,15 +147,26 @@ atom-text-editor, :host {
 // .entity.other.attribute-name.placeholder.scss {
 //   color: @violet;
 // }
-
 .variable,
 .variable.language,
 .source.css.scss .meta.set.variable .variable,
 .variable.other,
 .variable.scss,
 .variable.other.less {
-  color: #009ACD;
+  color: #009acd;
 }
+
+
+.variable {
+  &.parameter {
+    &.function {
+      color: #ab9900;
+      font-style: italic;
+    }
+  }
+}
+
+
 .delimiter,
 .brace {
   color: @red;
@@ -169,10 +174,10 @@ atom-text-editor, :host {
 .delimiter.period {
   color: @green;
 }
-.punctuation.section.property-list.begin, .punctuation.section.property-list.end {
+.punctuation.section.property-list.begin,
+.punctuation.section.property-list.end {
   color: @red;
 }
-
 .invalid {
   &.deprecated {
     color: @red;
@@ -188,9 +193,9 @@ atom-text-editor, :host {
   &.control {
     color: #cd3700;
     &.js {
-      color: @orange;
+      color: #ab9900;
+      font-weight: bold;
     }
-
   }
   &.operator {
     &.comparison {
@@ -200,9 +205,8 @@ atom-text-editor, :host {
       color: @red;
     }
     &.js {
-      color: @cyan-2;
+      color: #ab9900;
     }
-
   }
   &.other {
     color: @brown;
@@ -213,10 +217,9 @@ atom-text-editor, :host {
       color: @red;
     }
     &.unit {
-      color: #9F5E3D;
+      color: #9f5e3d;
     }
   }
-
 }
 .punctuation {
   &.definition {
@@ -259,10 +262,10 @@ atom-text-editor, :host {
       color: inherit;
     }
   }
-  &.section.property-list.begin, &.section.property-list.end {
+  &.section.property-list.begin,
+  &.section.property-list.end {
     color: @syntax-text-color;
   }
-
 }
 .punctuation.definition.keyword.css,
 .punctuation.definition.keyword.scss,
@@ -270,25 +273,23 @@ atom-text-editor, :host {
 .punctuation.definition.entity.scss {
   color: inherit;
 }
-
-.punctuation.section.embedded.begin.php, .punctuation.section.embedded.end.php{
+.punctuation.section.embedded.begin.php,
+.punctuation.section.embedded.end.php {
   color: @purple;
 }
-
-
 .storage {
   color: #a52a2a;
   &.type.js {
     color: @burgundy;
   }
-
 }
 .string {
   color: @green-light;
-//  font-weight: bold;
-//  font-style: italic;
+  //  font-weight: bold;
+  //  font-style: italic;
   &.quoted {
-    &.double, &.single {
+    &.double,
+    &.single {
       color: @green-light;
       .constant.character.escape {
         color: inherit;
@@ -298,7 +299,6 @@ atom-text-editor, :host {
     &.single.js {
       color: @green-light;
     }
-
   }
   &.quoted.double.ruby .source.ruby.embedded.source {
     color: #007e69;
@@ -307,7 +307,6 @@ atom-text-editor, :host {
     color: @green;
     background-color: #c9d4be;
   }
-
 }
 .support {
   color: @blue-dark;
@@ -326,7 +325,6 @@ atom-text-editor, :host {
   &.constant.property-value {
     color: @orange;
   }
-
 }
 .support.function:not(.variable),
 .keyword.other.special-method.ruby {
@@ -335,24 +333,20 @@ atom-text-editor, :host {
 // .support.type.property-name.css, .meta.property-name {
 //   color: @teal-dark;
 // }
-
 .variable {
   color: @purple;
   &.interpolation {
     &.scss {
-      color:@yellow-bright;
+      color: @yellow-bright;
     }
   }
-
 }
 .text .source {
   color: #7b211a;
   background-color: rgba(119, 173, 233, 0);
-
 }
 .meta.cast {
   color: @middle-gray-0;
-
 }
 .meta.sgml.html .meta.doctype,
 .meta.sgml.html .meta.doctype .entity,
@@ -361,36 +355,29 @@ atom-text-editor, :host {
 .meta.xml-processing .entity,
 .meta.xml-processing .string {
   color: @dark-gray-0;
-
 }
 .meta.tag,
 .meta.tag .entity {
   color: @teal-dark;
-
 }
 .source .entity.name.tag,
 .source .entity.other.attribute-name,
 .meta.tag.inline,
 .meta.tag.inline .entity {
   color: @teal-dark;
-
 }
 .meta {
   &.class {
     color: @yellow;
-
   }
   &.link {
     color: @orange;
-
   }
   &.require {
     color: @blue;
-
   }
   &.selector {
     color: @purple;
-
   }
   &.separator {
     background-color: #60a633;
@@ -399,36 +386,27 @@ atom-text-editor, :host {
   &.meta.function-call {
     color: @yellow;
   }
-
+  &.brace {
+    color: @syntax-text-color;
+  }
 }
 .source.js.embedded.html {
   color: @dark-gray-0;
-
 }
 .entity.name.class {
   color: #616838;
   background-color: #d7d7a7;
 }
-
-
 .active_guide {
   background-color: #968f96;
-
 }
 .highlight_matching_word {
   background-color: rgba(203, 220, 47, 0.22);
-
 }
-
-
 .status-modified {
   color: @syntax-color-modified;
 }
-
-
-
 // -- MARKUP
-
 .markup {
   &.bold {
     font-weight: bold;
