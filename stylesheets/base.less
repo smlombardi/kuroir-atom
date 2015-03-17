@@ -74,7 +74,9 @@ atom-text-editor, :host {
 
 
 .comment, .punctuation.definition.comment.html, .punctuation.definition.comment.js, .punctuation.definition.comment.css {
-  color: @base1;
+  color: @syntax-comment-color;
+  background-color: rgba(220, 220, 220, 0.5);
+  //font-style: italic;
 }
 .constant {
   color: @orange;
@@ -83,13 +85,13 @@ atom-text-editor, :host {
     color: @cyan;
   }
   &.numeric {
-    color: @cyan;
+    color: #9A5925;
   }
   &.other.color,
   &.other.color.rgb-value-scss {
-    color: @orange;
+    color: #B8860B;
     .punctuation.definition.constant.scss {
-      color: @orange;
+      color: #B8860B;
     }
   }
   &.other.symbol {
@@ -118,6 +120,9 @@ atom-text-editor, :host {
       &.namespace {
         color: @orange;
       }
+      &.class.css {
+        color: #B8012D;
+      }
     }
     &.inherited-class {
       color: @teal-dark;
@@ -128,7 +133,7 @@ atom-text-editor, :host {
   }
   &.name {
     &.tag {
-      font-family: 'SourceCodePro-Semibold', Menlo, Consolas monospace;
+      //font-weight: bold;
       &.css {
         color: @teal-dark;
       }
@@ -153,8 +158,9 @@ atom-text-editor, :host {
 .variable.language,
 .source.css.scss .meta.set.variable .variable,
 .variable.other,
-.variable.scss {
-  color: @blue;
+.variable.scss,
+.variable.other.less {
+  color: #009ACD;
 }
 .delimiter,
 .brace {
@@ -201,10 +207,13 @@ atom-text-editor, :host {
   &.other {
     color: @brown;
     &.important {
-      color: @red;
+      color: #ec468c;
     }
     &.default {
       color: @red;
+    }
+    &.unit {
+      color: #9F5E3D;
     }
   }
 
@@ -250,6 +259,9 @@ atom-text-editor, :host {
       color: inherit;
     }
   }
+  &.section.property-list.begin, &.section.property-list.end {
+    color: @syntax-text-color;
+  }
 
 }
 .punctuation.definition.keyword.css,
@@ -267,14 +279,14 @@ atom-text-editor, :host {
 .storage {
   color: #a52a2a;
   &.type.js {
-    font-family: 'SourceCodePro-Semibold', Menlo, Consolas monospace;
-    
     color: @burgundy;
   }
 
 }
 .string {
   color: @green-light;
+//  font-weight: bold;
+//  font-style: italic;
   &.quoted {
     &.double, &.single {
       color: @green-light;
@@ -318,7 +330,6 @@ atom-text-editor, :host {
 }
 .support.function:not(.variable),
 .keyword.other.special-method.ruby {
-  font-family: 'SourceCodePro-Semibold', Menlo, Consolas monospace;
   color: @burgundy;
 }
 // .support.type.property-name.css, .meta.property-name {
@@ -397,8 +408,9 @@ atom-text-editor, :host {
 .entity.name.class {
   color: #616838;
   background-color: #d7d7a7;
-
 }
+
+
 .active_guide {
   background-color: #968f96;
 

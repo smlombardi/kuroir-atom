@@ -3,26 +3,27 @@
 // include a syntax-variables.less file.
 
 // General colors
-@syntax-text-color:       #39393c;
-@syntax-cursor-color:     #20202c;
-@syntax-selection-color:  rgba(240, 197, 141, 0.6);
-@syntax-background-color: #f0f0f0;
+@syntax-text-color:       #363636;
+@syntax-cursor-color:     #202020;
+@syntax-selection-color:  rgba(245, 170, 0, .56);
+@syntax-background-color: #E8E9E8;
+@syntax-comment-color: rgba(148, 148, 148, 0.9);
 
 // Guide colors
-@syntax-wrap-guide-color:          rgba(0, 0, 0, 0.15);
+@syntax-wrap-guide-color:          #8F8F8F;
 @syntax-indent-guide-color:        rgba(0, 0, 0, 0.15);
-@syntax-invisible-character-color: rgba(0, 0, 0, 0.15);
+@syntax-invisible-character-color: rgba(0, 0, 0, 0.29);
 
 // For find and replace markers
 @syntax-result-marker-color:          rgba(0, 0, 0, 0.29);
 @syntax-result-marker-color-selected: #363636;
 
 // Gutter colors
-@syntax-gutter-text-color:                #363636;
+@syntax-gutter-text-color:                #8f8f8f;
 @syntax-gutter-text-color-selected:       #363636;
-@syntax-active-line-color:                darken(@syntax-background-color, 4%);
-@syntax-gutter-background-color:          darken(@syntax-background-color, 6%);
-@syntax-gutter-background-color-selected: darken(@syntax-background-color, 12%);
+@syntax-active-line-color:               rgba(203, 220, 47, .21);
+@syntax-gutter-background-color:          @syntax-background-color;
+@syntax-gutter-background-color-selected: @syntax-background-color;
 
 @syntax-bracket-matcher-background-color: darken(@syntax-background-color, 14%);
 
