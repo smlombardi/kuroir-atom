@@ -224,7 +224,7 @@ atom-text-editor,
 .punctuation {
   &.definition {
     &.comment {
-      color: @middle-gray-0;
+      color: @syntax-comment-color;
     }
     &.tag {
       color: @teal-dark;
@@ -234,10 +234,12 @@ atom-text-editor,
         color: @base1;
       }
     }
-    &.string,
     &.parameters,
     &.array {
       color: @syntax-text-color;
+    }
+    &.string {
+      color: @green-light;
     }
     &.variable {
       color: inherit;
@@ -301,7 +303,7 @@ atom-text-editor,
     }
   }
   &.quoted.double.ruby .source.ruby.embedded.source {
-    color: #007e69;
+    color: @green-light;
   }
   &.regexp {
     color: @green;
