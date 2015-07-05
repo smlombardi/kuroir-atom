@@ -1,13 +1,14 @@
 @import "colors.less";
+@import "syntax-variables.less";
 
 atom-text-editor,:host {
-  background-color: #e8e9e8;
-  color: #363636;
+  background-color: @syntax-background-color;
+  color: @syntax-text-color;
 }
 
 atom-text-editor .wrap-guide,
 :host .wrap-guide {
-  background-color: #8f8f8f;
+  background-color: @syntax-wrap-guide-color;
 }
 
 atom-text-editor .lines .line.cursor-line,
@@ -291,7 +292,7 @@ atom-text-editor .selection .region,
 }
 
 .markup.underline {
-  text-decoration: underline;
+  // text-decoration: underline;
   color: #E18964;
 }
 
