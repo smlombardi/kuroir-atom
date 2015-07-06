@@ -1,9 +1,9 @@
 kuroir-atom
 ===========
 
-Atom port of the Textmate theme.  Ported by hand to LESS, not simply converted with APM.  
+Enhanced version of classic Textmate theme.  Includes enhancements for latest tags in Atom 1.0, including Angular JS code in html.
 
-Optimizing syntax coloring for front-end development of HTML, CSS, SCSS, and JS.
+Optimize syntax coloring for front-end development of HTML, CSS, SCSS, and JS.
 
 
 ###SCSS
