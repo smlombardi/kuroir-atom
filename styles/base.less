@@ -1,425 +1,407 @@
 @import "colors.less";
 @import "syntax-variables.less";
 
-atom-text-editor,:host {
+atom-text-editor {
   background-color: @syntax-background-color;
   color: @syntax-text-color;
 }
 
-atom-text-editor .wrap-guide,
-:host .wrap-guide {
+atom-text-editor .wrap-guide {
   background-color: @syntax-wrap-guide-color;
 }
 
-atom-text-editor .lines .line.cursor-line,
-:host .lines .line.cursor-line {
+atom-text-editor .lines .line.cursor-line {
   background-color: rgba(203, 220, 47, 0.21);
 }
 
-atom-text-editor .indent-guide,
-:host .indent-guide {
+atom-text-editor .indent-guide {
   color: rgba(0, 0, 0, 0.15);
 }
 
-atom-text-editor .invisible-character,
-:host .invisible-character {
+atom-text-editor .invisible-character {
   color: rgba(0, 0, 0, 0.29);
 }
 
-atom-text-editor.is-focused .cursor,
-:host.is-focused .cursor {
+atom-text-editor.is-focused .cursor {
   border-color: #202020;
 }
 
-atom-text-editor.is-focused.vim-mode.command-mode .cursor,
-:host.is-focused.vim-mode.command-mode .cursor {
+atom-text-editor.is-focused.vim-mode.command-mode .cursor {
   background-color: #202020;
 }
 
 atom-text-editor.is-focused .cursor,
-:host.is-focused .cursor,
-atom-text-editor.is-focused.vim-mode.command-mode .cursor,
-:host.is-focused.vim-mode.command-mode .cursor {
+atom-text-editor.is-focused.vim-mode.command-mode .cursor {
   transition: opacity 0.3s ease-in-out;
 }
 
 atom-text-editor.is-focused .cursor.blink-off,
-:host.is-focused .cursor.blink-off,
-atom-text-editor.is-focused.vim-mode.command-mode .cursor.blink-off,
-:host.is-focused.vim-mode.command-mode .cursor.blink-off {
+atom-text-editor.is-focused.vim-mode.command-mode .cursor.blink-off {
   visibility: visible;
   opacity: 0;
 }
 
-atom-text-editor .gutter,
-:host .gutter {
+atom-text-editor .gutter {
   background-color: #e8e9e8;
   color: #8f8f8f;
 }
 
-atom-text-editor .gutter .line-number.cursor-line,
-:host .gutter .line-number.cursor-line {
+atom-text-editor .gutter .line-number.cursor-line {
   background-color: #e8e9e8;
   color: #363636;
 }
 
-atom-text-editor .gutter .line-number.cursor-line-no-selection,
-:host .gutter .line-number.cursor-line-no-selection {
+atom-text-editor .gutter .line-number.cursor-line-no-selection {
   color: #363636;
 }
 
 atom-text-editor .gutter .line-number.folded,
-:host .gutter .line-number.folded,
 atom-text-editor .gutter .line-number:after,
-:host .gutter .line-number:after,
-atom-text-editor .fold-marker:after,
-:host .fold-marker:after {
+atom-text-editor .fold-marker:after {
   color: #8f8f8f;
 }
 
-atom-text-editor .invisible,
-:host .invisible {
+atom-text-editor .invisible {
   color: rgba(0, 0, 0, 0.29);
 }
 
-atom-text-editor .selection .region,
-:host .selection .region {
+atom-text-editor .selection .region {
   background-color: rgba(231, 189, 125, 0.51);
 }
 
-.comment {
+.syntax--comment {
   color: rgba(148, 148, 148, 1);
   background-color: rgba(220, 220, 220, 0.45);
 }
 
-.comment.line.region {
+.syntax--comment.syntax--line.syntax--region {
   color: #A54776;
   background-color: rgba(233, 214, 220, 0.52);
 }
 
-.comment.line.marker.php {
+.syntax--comment.syntax--line.syntax--marker.syntax--php {
   color: #668D68;
   background-color: #E9E4BE;
 }
 
-.comment.line.todo.php {
+.syntax--comment.syntax--line.syntax--todo.syntax--php {
   color: #456E48;
   background-color: #D9EAB8;
 }
 
-.comment.line.fixme.php {
+.syntax--comment.syntax--line.syntax--fixme.syntax--php {
   color: #880006;
   background-color: #E1D0CA;
 }
 
-.constant {
+.syntax--constant {
   color: #CD6839;
 }
 
-.entity {
+.syntax--entity {
   color: #8B4726;
 }
 
-.storage {
+.syntax--storage {
   color: #A52A2A;
 }
 
-.keyword.control {
+.syntax--keyword.syntax--control {
   color: #CD3700;
 }
 
-.support.function:not(.variable), .keyword.other.special-method.ruby {
+.syntax--support.syntax--function:not(.syntax--variable), .syntax--keyword.syntax--other.syntax--special-method.syntax--ruby {
   color: #B03060;
 }
 
-.keyword.operator.comparison, .keyword.operator.logical {
+.syntax--keyword.syntax--operator.syntax--comparison, .syntax--keyword.syntax--operator.syntax--logical {
   color: #B83126;
 }
 
-.string {
+.syntax--string {
   color: #639300;
 }
 
-.string.quoted.double.ruby .source.ruby.embedded.source {
+.syntax--string.syntax--quoted.syntax--double.syntax--ruby .syntax--source.syntax--ruby.syntax--embedded.syntax--source {
   color: #007E69;
 }
 
-.support {
+.syntax--support {
   color: #104E8B;
 }
 
-.variable {
+.syntax--variable {
   color: #009ACD;
 }
 
-.invalid.deprecated {
+.syntax--invalid.syntax--deprecated {
   font-style: italic;
   text-decoration: underline;
   color: #FD1732;
 }
 
-.invalid.illegal {
+.syntax--invalid.syntax--illegal {
   color: #FD1224;
 }
 
-.text .source {
+.syntax--text .syntax--source {
   color: #7B211A;
 }
 
-.entity.other.inherited-class {
+.syntax--entity.syntax--other.syntax--inherited-class {
   font-style: italic;
   color: #005273;
 }
 
-.string.regexp {
+.syntax--string.syntax--regexp {
   color: #417E00;
 }
 
-.support.function {
+.syntax--support.syntax--function {
   color: #005273;
 }
 
-.support.constant {
+.syntax--support.syntax--constant {
   color: #CF6A4C;
 }
 
-.entity.name.type {
+.syntax--entity.syntax--name.syntax--type {
   text-decoration: underline;
 }
 
-.meta.cast {
+.syntax--meta.syntax--cast {
   font-style: italic;
   color: #676767;
 }
 
-.meta.sgml.html .meta.doctype, .meta.sgml.html .meta.doctype .entity, .meta.sgml.html .meta.doctype .string, .meta.xml-processing, .meta.xml-processing .entity, .meta.xml-processing .string {
+.syntax--meta.syntax--sgml.syntax--html .syntax--meta.syntax--doctype, .syntax--meta.syntax--sgml.syntax--html .syntax--meta.syntax--doctype .syntax--entity, .syntax--meta.syntax--sgml.syntax--html .syntax--meta.syntax--doctype .syntax--string, .syntax--meta.syntax--xml-processing, .syntax--meta.syntax--xml-processing .syntax--entity, .syntax--meta.syntax--xml-processing .syntax--string {
   color: #494949;
 }
 
-.meta.tag, .meta.tag .entity {
+.syntax--meta.syntax--tag, .syntax--meta.syntax--tag .syntax--entity {
   color: #005273;
 }
 
-.source .entity.name.tag, .source .entity.other.attribute-name, .meta.tag.inline, .meta.tag.inline .entity {
+.syntax--source .syntax--entity.syntax--name.syntax--tag, .syntax--source .syntax--entity.syntax--other.syntax--attribute-name, .syntax--meta.syntax--tag.syntax--inline, .syntax--meta.syntax--tag.syntax--inline .syntax--entity {
   color: #005273;
 }
 
-.entity.name.tag.namespace, .entity.other.attribute-name.namespace {
+.syntax--entity.syntax--name.syntax--tag.syntax--namespace, .syntax--entity.syntax--other.syntax--attribute-name.syntax--namespace {
   color: #B85423;
 }
 
-.entity.name.tag.css {
+.syntax--entity.syntax--name.syntax--tag.syntax--css {
   color: #B83126;
 }
 
-.meta.selector.css .entity.other.attribute-name.tag.pseudo-class {
+.syntax--meta.syntax--selector.syntax--css .syntax--entity.syntax--other.syntax--attribute-name.syntax--tag.syntax--pseudo-class {
   color: #B12E25;
 }
 
-.meta.selector.css .entity.other.attribute-name.id, .entity.other.attribute-name.id.css {
+.syntax--meta.syntax--selector.syntax--css .syntax--entity.syntax--other.syntax--attribute-name.syntax--id, .syntax--entity.syntax--other.syntax--attribute-name.syntax--id.syntax--css {
   color: #B8002D;
 }
 
-.meta.selector.css .entity.other.attribute-name.class, .entity.other.attribute-name.class.css {
+.syntax--meta.syntax--selector.syntax--css .syntax--entity.syntax--other.syntax--attribute-name.syntax--class, .syntax--entity.syntax--other.syntax--attribute-name.syntax--class.syntax--css {
   color: #B8012D;
 }
 
-.support.type.property-name.css, .meta.property-name {
+.syntax--support.syntax--type.syntax--property-name.syntax--css, .syntax--meta.syntax--property-name {
   color: #005273;
 }
 
-.meta.preprocessor.at-rule .keyword.control.at-rule {
+.syntax--meta.syntax--preprocessor.syntax--at-rule .syntax--keyword.syntax--control.syntax--at-rule {
   color: #8693A5;
 }
 
-.meta.property-value {
+.syntax--meta.syntax--property-value {
   color: #417E00;
 }
 
-.constant.other.color {
+.syntax--constant.syntax--other.syntax--color {
   color: #B8860B;
 }
 
-.constant.numeric {
+.syntax--constant.syntax--numeric {
   color: #9A5925;
 }
 
 
-.keyword.other {
+.syntax--keyword.syntax--other {
   color: #9F5E3D;
 }
 
-.keyword.other.important, .keyword.other.default {
+.syntax--keyword.syntax--other.syntax--important, .syntax--keyword.syntax--other.syntax--default {
   color: #EE3A8C;
 }
 
 
-.meta.property-value .support.constant.named-color.css, .meta.property-value .constant {
+.syntax--meta.syntax--property-value .syntax--support.syntax--constant.syntax--named-color.syntax--css, .syntax--meta.syntax--property-value .syntax--constant {
   color: #417E00;
 }
 
-.meta.constructor.argument.css {
+.syntax--meta.syntax--constructor.syntax--argument.syntax--css {
   color: #417E00;
 }
 
 
 
 
-.source.scss .support.function.misc {
+.syntax--source.syntax--scss .syntax--support.syntax--function.syntax--misc {
   color: #1B76B0;
 }
 
-.meta.diff, .meta.diff.header {
+.syntax--meta.syntax--diff, .syntax--meta.syntax--diff.syntax--header {
   font-style: italic;
   color: #F8BEBE;
 }
 
-.markup.deleted {
+.syntax--markup.syntax--deleted {
   color: #ccc;
 }
 
-.markup.changed {
+.syntax--markup.syntax--changed {
   color: #ccc;
 }
 
-.markup.inserted {
+.syntax--markup.syntax--inserted {
   color: #ccc;
 }
 
-.markup.italic {
+.syntax--markup.syntax--italic {
   font-style: italic;
   color: #CD2626;
 }
 
-.markup.bold {
+.syntax--markup.syntax--bold {
   font-weight: bold;
   color: #8B1A1A;
 }
 
-.markup.underline {
+.syntax--markup.syntax--underline {
   // text-decoration: underline;
   color: #E18964;
 }
 
-.markup.quote {
+.syntax--markup.syntax--quote {
   font-style: italic;
   color: #8B7765;}
 
-.markup.heading, .markup.heading .entity {
+.syntax--markup.syntax--heading, .syntax--markup.syntax--heading .syntax--entity {
   color: #B8012D;
 }
 
-.markup.list {
+.syntax--markup.syntax--list {
   color: #8F5B26;
 }
 
-.markup.raw {
+.syntax--markup.syntax--raw {
   color: #578BB3;
 }
 
-.markup .comment {
+.syntax--markup .syntax--comment {
   font-style: italic;
   color: #F67B37;
 }
 
-.meta.separator {
+.syntax--meta.syntax--separator {
   color: #60A633;
 }
 
-.markup.other {
+.syntax--markup.syntax--other {
   color: #578BB3;
 }
 
-.punctuation.definition.end, .punctuation.definition.begin {
+.syntax--punctuation.syntax--definition.syntax--end, .syntax--punctuation.syntax--definition.syntax--begin {
   color: #969fa2;
 }
 
-.entity.other.attribute-name.html {
+.syntax--entity.syntax--other.syntax--attribute-name.syntax--html {
   color: #629F9E;
 }
 
-.string.quoted.double.js, .string.quoted.single.js {
+.syntax--string.syntax--quoted.syntax--double.syntax--js, .syntax--string.syntax--quoted.syntax--single.syntax--js {
   color: #79A316;
 }
 
-.entity.name.function.js {
+.syntax--entity.syntax--name.syntax--function.syntax--js {
   font-style: italic;
   color: #488C45;
 }
 
-.source.js.embedded.html {
+.syntax--source.syntax--js.syntax--embedded.syntax--html {
   color: #666;
 }
 
-.storage.type.js {
+.syntax--storage.syntax--type.syntax--js {
   color: #BB3182;
 }
 
-.support.class.js {
+.syntax--support.syntax--class.syntax--js {
   color: #338FD5;
 }
 
 
-.entity.name.class {
+.syntax--entity.syntax--name.syntax--class {
   color: #616838;
 }
 
-.active_guide {
+.syntax--active_guide {
   background-color: #968F96;
 }
 
-.highlight_matching_word {
+.syntax--highlight_matching_word {
   background-color: rgba(203, 220, 47, 0.22);
 }
 
 
 // SASS
 
-.entity.name.tag.custom.scss {
+.syntax--entity.syntax--name.syntax--tag.syntax--custom.syntax--scss {
   color: @purple;
 }
 
-.entity.other.attribute-name.pseudo-element.css {
+.syntax--entity.syntax--other.syntax--attribute-name.syntax--pseudo-element.syntax--css {
   color: @rosybrown;
 }
 
-.constant.other.rgb-value.css {
+.syntax--constant.syntax--other.syntax--rgb-value.syntax--css {
   color: @wild-willow;
 }
 
-.entity.other.attribute-name.class.css {
+.syntax--entity.syntax--other.syntax--attribute-name.syntax--class.syntax--css {
   color: @lingonbery;
   background-color: transparent;
 }
 
-.entity.other.attribute-name.attribute.scss {
+.syntax--entity.syntax--other.syntax--attribute-name.syntax--attribute.syntax--scss {
   color: @indianred;
 }
-.string.quoted.double.attribute-value.scss {
+.syntax--string.syntax--quoted.syntax--double.syntax--attribute-value.syntax--scss {
   color: @goldenrod;
 }
-.variable.interpolation.scss {
+.syntax--variable.syntax--interpolation.syntax--scss {
   color: @barely-pink;
 }
 
-.entity.other.attribute-name.placeholder.scss {
+.syntax--entity.syntax--other.syntax--attribute-name.syntax--placeholder.syntax--scss {
   color: @mediumpurple;
-  .punctuation.definition.entity.scss {
+  .syntax--punctuation.syntax--definition.syntax--entity.syntax--scss {
     color: inherit;
   }
 }
 
-.entity.other.attribute-name.pseudo-element.css {
+.syntax--entity.syntax--other.syntax--attribute-name.syntax--pseudo-element.syntax--css {
   color: @indianred;
 }
 
 
 
-.entity.other.attribute-name.pseudo-class.css {
+.syntax--entity.syntax--other.syntax--attribute-name.syntax--pseudo-class.syntax--css {
   color: @ship-cove;
 }
 
-.entity.name.tag.scss {
+.syntax--entity.syntax--name.syntax--tag.syntax--scss {
   color: @yellow;
 }
 
@@ -427,37 +409,37 @@ atom-text-editor .selection .region,
 
 //html-angular
 
-.meta.tag.template.angular {
+.syntax--meta.syntax--tag.syntax--template.syntax--angular {
   color: @coral-tree;
 }
 
-.meta.tag.template.angular .keyword.operator.js {
+.syntax--meta.syntax--tag.syntax--template.syntax--angular .syntax--keyword.syntax--operator.syntax--js {
   color: inherit;
 }
 
-.meta.tag.template.angular .punctuation.definition.block.begin.angular,
-.meta.tag.template.angular .punctuation.definition.block.end.angular {
+.syntax--meta.syntax--tag.syntax--template.syntax--angular .syntax--punctuation.syntax--definition.syntax--block.syntax--begin.syntax--angular,
+.syntax--meta.syntax--tag.syntax--template.syntax--angular .syntax--punctuation.syntax--definition.syntax--block.syntax--end.syntax--angular {
   color: @plum;
 }
 
-.meta.tag.template.angular .meta.brace.curly.js {
+.syntax--meta.syntax--tag.syntax--template.syntax--angular .syntax--meta.syntax--brace.syntax--curly.syntax--js {
   color: #d2952a;
 }
 
-.meta.attribute.html.angular .entity.other.attribute-name.html.angular {
+.syntax--meta.syntax--attribute.syntax--html.syntax--angular .syntax--entity.syntax--other.syntax--attribute-name.syntax--html.syntax--angular {
   color: inherit;
 }
 
-.keyword.control.js,
-.keyword.operator.js,
-.meta.tag.template.angular .keyword.operator.js {
+.syntax--keyword.syntax--control.syntax--js,
+.syntax--keyword.syntax--operator.syntax--js,
+.syntax--meta.syntax--tag.syntax--template.syntax--angular .syntax--keyword.syntax--operator.syntax--js {
   color: @comet;
   font-weight: bold;
 }
 
 
 
-.bracket-matcher .region {
+.syntax--bracket-matcher .syntax--region {
   border-bottom: 1px solid #202020;
   box-sizing: border-box;
   background-color: #c4c6c4;
